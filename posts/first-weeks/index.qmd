@@ -1,0 +1,13 @@
+---
+title: "My first weeks in MDS"
+author: "YuanChen (Cary) Ling"
+date: 2026-09-12
+---
+My first few weeks in MDS have been exciting but also stressful. There are many lectures, labs, worksheets, and assignments, and each course covers a lot of material in a short time. I am still getting used to the fast pace and learning how to manage my time better.
+
+So far, I have learned many new topics and tools. In Python and R, I have worked with programming, data manipulation, and data cleaning. I have also studied probability and statistics while learning tools such as Git, GitHub, the command line, and Quarto.
+
+One of my biggest concerns is finding a job after graduation. Since MDS is a short and intensive program, I feel that I need to prepare for the job market while keeping up with my courses. My goal is to become a data analyst, and I hope the skills I learn in MDS will help me achieve that goal.
+
+![A moment from UBC](ubc.jpg)
+

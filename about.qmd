@@ -1,5 +1,15 @@
 ---
-title: "About"
+title: "About Me"
 ---
 
-About this site
+## Background
+
+Hi! My name is YuanChen (Cary) Ling who is from China. Before joining the Master of Data Science program at UBC, I completed my undergraduate degree at the University of Toronto, where I majored in Mathematics and Statistics. My undergraduate studies gave me a strong foundation in quantitative thinking and motivated me to explore how these skills can be applied to real-world problems.
+
+## Why Data Science
+
+I chose to pursue data science because I enjoy working with data and discovering useful information from it. Through the MDS program, I hope to strengthen my skills in programming, statistics, machine learning, and data analysis. After graduation, my goal is to work as a professional data analyst and use data in AI industry explicitly.
+
+## Outside Data Science
+
+Outside of academics and data science, I am passionate about DJing and breaking. I enjoy music, dancing, and the creativity that comes with both of these activities. In fact, I am a competitive breakdancer and have competed in several competitions—although I haven't won any awards yet!
