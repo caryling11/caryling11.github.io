@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "caryling11.github.io"
+  title: "Yuanchen(Cary) Ling"
   navbar:
     left:
       - href: index.qmd

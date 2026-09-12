@@ -1,7 +1,7 @@
 ---
-title: "website"
+title: "YuanChen(Cary) Ling"
 ---
 
-This is a Quarto website.
+![](images/1.jpg){width=250px}
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Hi! My name is YuanChen (Cary) Ling, and I am originally from China. Before joining the MDS program, I completed my undergraduate degree at the University of Toronto, where I majored in Mathematics and Statistics. My career goal is to become a professional data analyst, and I hope to pursue this path after graduating from the MDS program. Outside of data science, I am also passionate about DJing and breaking—maybe they could even become part-time careers someday, who knows?
