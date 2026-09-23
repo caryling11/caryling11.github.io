@@ -214,7 +214,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="exploring-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="exploring-the-data">Exploring the Data</h2>
 <p>First, I load the dataset and inspect the first few rows.</p>
-<div id="1ef052c3" class="cell" data-execution_count="1">
+<div id="e9d24475" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>penguins <span class="op">=</span> pd.read_csv(<span class="st">"penguins.csv"</span>)</span>
@@ -304,7 +304,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="average-body-mass-by-species" class="level2">
 <h2 class="anchored" data-anchor-id="average-body-mass-by-species">Average Body Mass by Species</h2>
 <p>Next, I compare the average body mass of the three penguin species.</p>
-<div id="ee29d6db" class="cell" data-execution_count="2">
+<div id="55850f9a" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>body_mass_by_species <span class="op">=</span> (</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    penguins.groupby(<span class="st">"species"</span>)[<span class="st">"body_mass_g"</span>]</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    .mean()</span>
@@ -324,7 +324,7 @@ Name: body_mass_g, dtype: float64</code></pre>
 <section id="summary-of-penguin-measurements" class="level2">
 <h2 class="anchored" data-anchor-id="summary-of-penguin-measurements">Summary of Penguin Measurements</h2>
 <p>Finally, I summarize the body mass and flipper length for each penguin species.</p>
-<div id="7b6ff7b8" class="cell" data-execution_count="3">
+<div id="82d4a014" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>penguin_summary <span class="op">=</span> (</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    penguins.groupby(<span class="st">"species"</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    .agg(</span>
