@@ -1,0 +1,56 @@
+---
+title: "Analysis of Penguins"
+author: "YuanChen Ling"
+date: "2026-09-23"
+---
+
+## Introduction
+
+In this post, I explore the Palmer Penguins dataset and examine differences in body measurements among penguin species.
+
+## Exploring the Data
+
+First, I load the dataset and inspect the first few rows.
+
+```{python}
+import pandas as pd
+
+penguins = pd.read_csv("penguins.csv")
+
+penguins.head()
+```
+## Average Body Mass by Species
+
+Next, I compare the average body mass of the three penguin species.
+
+```{python}
+body_mass_by_species = (
+    penguins.groupby("species")["body_mass_g"]
+    .mean()
+    .sort_values(ascending=False)
+)
+
+body_mass_by_species
+```
+## Summary of Penguin Measurements
+
+Finally, I summarize the body mass and flipper length for each penguin species.
+
+```{python}
+penguin_summary = (
+    penguins.groupby("species")
+    .agg(
+        mean_body_mass=("body_mass_g", "mean"),
+        mean_flipper_length=("flipper_length_mm", "mean"),
+        number_of_penguins=("species", "count")
+    )
+    .round(2)
+)
+
+penguin_summary
+```
+### Data Source
+
+The Palmer Penguins dataset used in this analysis is from the `palmerpenguins` project by Allison Horst, Alison Hill, and Kristen Gorman. The data were originally collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER.
+
+The dataset is available under the CC0 license. 
