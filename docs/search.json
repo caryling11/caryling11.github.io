@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "My first weeks in MDS\n\n\n\n\n\n\n\n\nSep 12, 2026\n\n\nYuanChen (Cary) Ling\n\n\n\n\n\nNo matching items"
+    "text": "Analysis of Penguins\n\n\n\n\n\n\n\n\nSep 23, 2026\n\n\nYuanChen Ling\n\n\n\n\n\n\n\n\n\n\n\n\nAnalysis of Gapminder\n\n\n\n\n\n\n\n\nSep 23, 2026\n\n\nYuanChen Ling\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 12, 2026\n\n\nYuanChen (Cary) Ling\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -14,11 +14,67 @@
     "text": "Hi! My name is YuanChen (Cary) Ling, and I am originally from China. Before joining the MDS program, I completed my undergraduate degree at the University of Toronto, where I majored in Mathematics and Statistics. My career goal is to become a professional data analyst, and I hope to pursue this path after graduating from the MDS program. Outside of data science, I am also passionate about DJing and breaking—maybe they could even become part-time careers someday, who knows?"
   },
   {
+    "objectID": "posts/analysis-of-penguins/index.html",
+    "href": "posts/analysis-of-penguins/index.html",
+    "title": "Analysis of Penguins",
+    "section": "",
+    "text": "In this post, I explore the Palmer Penguins dataset and examine differences in body measurements among penguin species."
+  },
+  {
+    "objectID": "posts/analysis-of-penguins/index.html#introduction",
+    "href": "posts/analysis-of-penguins/index.html#introduction",
+    "title": "Analysis of Penguins",
+    "section": "",
+    "text": "In this post, I explore the Palmer Penguins dataset and examine differences in body measurements among penguin species."
+  },
+  {
+    "objectID": "posts/analysis-of-penguins/index.html#exploring-the-data",
+    "href": "posts/analysis-of-penguins/index.html#exploring-the-data",
+    "title": "Analysis of Penguins",
+    "section": "Exploring the Data",
+    "text": "Exploring the Data\nFirst, I load the dataset and inspect the first few rows.\n\nimport pandas as pd\n\npenguins = pd.read_csv(\"penguins.csv\")\n\npenguins.head()\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nmale\n2007\n\n\n1\nAdelie\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nfemale\n2007\n\n\n2\nAdelie\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nfemale\n2007\n\n\n3\nAdelie\nTorgersen\nNaN\nNaN\nNaN\nNaN\nNaN\n2007\n\n\n4\nAdelie\nTorgersen\n36.7\n19.3\n193.0\n3450.0\nfemale\n2007"
+  },
+  {
+    "objectID": "posts/analysis-of-penguins/index.html#average-body-mass-by-species",
+    "href": "posts/analysis-of-penguins/index.html#average-body-mass-by-species",
+    "title": "Analysis of Penguins",
+    "section": "Average Body Mass by Species",
+    "text": "Average Body Mass by Species\nNext, I compare the average body mass of the three penguin species.\n\nbody_mass_by_species = (\n    penguins.groupby(\"species\")[\"body_mass_g\"]\n    .mean()\n    .sort_values(ascending=False)\n)\n\nbody_mass_by_species\n\nspecies\nGentoo       5076.016260\nChinstrap    3733.088235\nAdelie       3700.662252\nName: body_mass_g, dtype: float64"
+  },
+  {
+    "objectID": "posts/analysis-of-penguins/index.html#summary-of-penguin-measurements",
+    "href": "posts/analysis-of-penguins/index.html#summary-of-penguin-measurements",
+    "title": "Analysis of Penguins",
+    "section": "Summary of Penguin Measurements",
+    "text": "Summary of Penguin Measurements\nFinally, I summarize the body mass and flipper length for each penguin species.\n\npenguin_summary = (\n    penguins.groupby(\"species\")\n    .agg(\n        mean_body_mass=(\"body_mass_g\", \"mean\"),\n        mean_flipper_length=(\"flipper_length_mm\", \"mean\"),\n        number_of_penguins=(\"species\", \"count\")\n    )\n    .round(2)\n)\n\npenguin_summary\n\n\n\n\n\n\n\n\nmean_body_mass\nmean_flipper_length\nnumber_of_penguins\n\n\nspecies\n\n\n\n\n\n\n\nAdelie\n3700.66\n189.95\n152\n\n\nChinstrap\n3733.09\n195.82\n68\n\n\nGentoo\n5076.02\n217.19\n124\n\n\n\n\n\n\n\n\nData Source\nThe Palmer Penguins dataset used in this analysis is from the palmerpenguins project by Allison Horst, Alison Hill, and Kristen Gorman. The data were originally collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER.\nThe dataset is available under the CC0 license."
+  },
+  {
     "objectID": "posts/first-weeks/index.html",
     "href": "posts/first-weeks/index.html",
     "title": "My first weeks in MDS",
     "section": "",
     "text": "My first few weeks in MDS have been exciting but also stressful. There are many lectures, labs, worksheets, and assignments, and each course covers a lot of material in a short time. I am still getting used to the fast pace and learning how to manage my time better.\nSo far, I have learned many new topics and tools. In Python and R, I have worked with programming, data manipulation, and data cleaning. I have also studied probability and statistics while learning tools such as Git, GitHub, the command line, and Quarto.\nOne of my biggest concerns is finding a job after graduation. Since MDS is a short and intensive program, I feel that I need to prepare for the job market while keeping up with my courses. My goal is to become a data analyst, and I hope the skills I learn in MDS will help me achieve that goal.\n\n\n\nA moment from UBC"
+  },
+  {
+    "objectID": "posts/analysis-of-gapminder/index.html",
+    "href": "posts/analysis-of-gapminder/index.html",
+    "title": "Analysis of Gapminder",
+    "section": "",
+    "text": "##Analyzing the Gapminder Dataset\nIn this post, I explore the Gapminder dataset to examine patterns in population, GDP per capita, and life expectancy across countries.\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.2.1     ✔ readr     2.2.0\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.3     ✔ tibble    3.3.1\n✔ lubridate 1.9.5     ✔ tidyr     1.3.2\n✔ purrr     1.2.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gapminder)\n#| message: false\n#| warning: false\ngapminder\n\n# A tibble: 1,704 × 6\n   country     continent  year lifeExp      pop gdpPercap\n   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.\n 2 Afghanistan Asia       1957    30.3  9240934      821.\n 3 Afghanistan Asia       1962    32.0 10267083      853.\n 4 Afghanistan Asia       1967    34.0 11537966      836.\n 5 Afghanistan Asia       1972    36.1 13079460      740.\n 6 Afghanistan Asia       1977    38.4 14880372      786.\n 7 Afghanistan Asia       1982    39.9 12881816      978.\n 8 Afghanistan Asia       1987    40.8 13867957      852.\n 9 Afghanistan Asia       1992    41.7 16317921      649.\n10 Afghanistan Asia       1997    41.8 22227415      635.\n# ℹ 1,694 more rows"
+  },
+  {
+    "objectID": "posts/analysis-of-gapminder/index.html#average-life-expectancy-by-continent",
+    "href": "posts/analysis-of-gapminder/index.html#average-life-expectancy-by-continent",
+    "title": "Analysis of Gapminder",
+    "section": "Average Life Expectancy by Continent",
+    "text": "Average Life Expectancy by Continent\nTo compare life expectancy across continents, I calculate the mean life expectancy for each continent.\n\nlife_exp_by_continent &lt;- gapminder |&gt;\n  group_by(continent) |&gt;\n  summarise(\n    mean_life_exp = mean(lifeExp)\n  ) |&gt;\n  arrange(desc(mean_life_exp))\n\nlife_exp_by_continent\n\n# A tibble: 5 × 2\n  continent mean_life_exp\n  &lt;fct&gt;             &lt;dbl&gt;\n1 Oceania            74.3\n2 Europe             71.9\n3 Americas           64.7\n4 Asia               60.1\n5 Africa             48.9"
+  },
+  {
+    "objectID": "posts/analysis-of-gapminder/index.html#gdp-per-capita-and-life-expectancy",
+    "href": "posts/analysis-of-gapminder/index.html#gdp-per-capita-and-life-expectancy",
+    "title": "Analysis of Gapminder",
+    "section": "GDP per Capita and Life Expectancy",
+    "text": "GDP per Capita and Life Expectancy\nNext, I visualize the relationship between GDP per capita and life expectancy. Each point represents a country in a particular year, and colors distinguish continents.\n\nggplot(gapminder, aes(x = gdpPercap, y = lifeExp, color = continent)) +\n  geom_point(alpha = 0.6) +\n  scale_x_log10() +\n  labs(\n    x = \"GDP per Capita\",\n    y = \"Life Expectancy\",\n    color = \"Continent\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\nFigure 1: Relationship between GDP per capita and life expectancy across continents.\n\n\n\n\n\n\nData Source\nThe data used in this analysis come from the gapminder R package. The dataset contains country-level information on life expectancy, population, and GDP per capita across multiple years."
   },
   {
     "objectID": "about.html",

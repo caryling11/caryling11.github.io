@@ -2,6 +2,8 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/analysis-of-penguins/index.html",
+      "/posts/analysis-of-gapminder/index.html",
       "/posts/first-weeks/index.html"
     ]
   }

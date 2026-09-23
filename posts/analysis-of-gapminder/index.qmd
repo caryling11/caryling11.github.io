@@ -1,0 +1,50 @@
+---
+title: "Analysis of Gapminder"
+author: "YuanChen Ling"
+date: "2026-09-23"
+---
+##Analyzing the Gapminder Dataset
+
+In this post, I explore the Gapminder dataset to examine patterns in population, GDP per capita, and life expectancy across countries.
+
+```{r}
+library(tidyverse)
+library(gapminder)
+#| message: false
+#| warning: false
+gapminder
+```
+
+## Average Life Expectancy by Continent
+To compare life expectancy across continents, I calculate the mean life expectancy for each continent.
+```{r}
+life_exp_by_continent <- gapminder |>
+  group_by(continent) |>
+  summarise(
+    mean_life_exp = mean(lifeExp)
+  ) |>
+  arrange(desc(mean_life_exp))
+
+life_exp_by_continent
+```
+## GDP per Capita and Life Expectancy
+
+Next, I visualize the relationship between GDP per capita and life expectancy. Each point represents a country in a particular year, and colors distinguish continents.
+
+```{r}
+#| label: fig-gdp-lifeexp
+#| fig-cap: "Relationship between GDP per capita and life expectancy across continents."
+
+ggplot(gapminder, aes(x = gdpPercap, y = lifeExp, color = continent)) +
+  geom_point(alpha = 0.6) +
+  scale_x_log10() +
+  labs(
+    x = "GDP per Capita",
+    y = "Life Expectancy",
+    color = "Continent"
+  ) +
+  theme_minimal()
+```
+### Data Source
+
+The data used in this analysis come from the `gapminder` R package. The dataset contains country-level information on life expectancy, population, and GDP per capita across multiple years.
