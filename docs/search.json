@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Analysis of Penguins\n\n\n\n\n\n\n\n\nSep 23, 2026\n\n\nYuanChen Ling\n\n\n\n\n\n\n\n\n\n\n\n\nAnalysis of Gapminder\n\n\n\n\n\n\n\n\nSep 23, 2026\n\n\nYuanChen Ling\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 12, 2026\n\n\nYuanChen (Cary) Ling\n\n\n\n\n\nNo matching items"
+    "text": "Analysis of Penguins\n\n\n\n\n\n\n\n\nSep 23, 2026\n\n\nYuanChen Ling\n\n\n\n\n\n\n\n\n\n\n\n\nR and Python Together\n\n\n\n\n\n\n\n\nSep 23, 2026\n\n\nYuanChen Ling\n\n\n\n\n\n\n\n\n\n\n\n\nAnalysis of Gapminder\n\n\n\n\n\n\n\n\nSep 23, 2026\n\n\nYuanChen Ling\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 12, 2026\n\n\nYuanChen (Cary) Ling\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -12,6 +12,41 @@
     "title": "YuanChen(Cary) Ling",
     "section": "",
     "text": "Hi! My name is YuanChen (Cary) Ling, and I am originally from China. Before joining the MDS program, I completed my undergraduate degree at the University of Toronto, where I majored in Mathematics and Statistics. My career goal is to become a professional data analyst, and I hope to pursue this path after graduating from the MDS program. Outside of data science, I am also passionate about DJing and breaking—maybe they could even become part-time careers someday, who knows?"
+  },
+  {
+    "objectID": "posts/r-and-python/index.html",
+    "href": "posts/r-and-python/index.html",
+    "title": "R and Python Together",
+    "section": "",
+    "text": "This post demonstrates how R and Python can work together in the same Quarto document. First, I create an object in R and then use that object in Python.\n\nlibrary(reticulate)\n\nlife_expectancy &lt;- c(68.8, 73.4, 75.2, 70.1, 77.5)\n\nlife_expectancy\n\n[1] 68.8 73.4 75.2 70.1 77.5"
+  },
+  {
+    "objectID": "posts/r-and-python/index.html#using-r-and-python-together",
+    "href": "posts/r-and-python/index.html#using-r-and-python-together",
+    "title": "R and Python Together",
+    "section": "",
+    "text": "This post demonstrates how R and Python can work together in the same Quarto document. First, I create an object in R and then use that object in Python.\n\nlibrary(reticulate)\n\nlife_expectancy &lt;- c(68.8, 73.4, 75.2, 70.1, 77.5)\n\nlife_expectancy\n\n[1] 68.8 73.4 75.2 70.1 77.5"
+  },
+  {
+    "objectID": "posts/r-and-python/index.html#passing-data-from-r-to-python",
+    "href": "posts/r-and-python/index.html#passing-data-from-r-to-python",
+    "title": "R and Python Together",
+    "section": "Passing Data from R to Python",
+    "text": "Passing Data from R to Python\nThe R object life_expectancy is passed to Python using r.life_expectancy.\n\nimport numpy as np\n\nlife_exp_python = np.array(r.life_expectancy)\n\nmean_life_expectancy = life_exp_python.mean()\n\nmean_life_expectancy\n\nnp.float64(73.0)"
+  },
+  {
+    "objectID": "posts/r-and-python/index.html#passing-the-result-back-to-r",
+    "href": "posts/r-and-python/index.html#passing-the-result-back-to-r",
+    "title": "R and Python Together",
+    "section": "Passing the Result Back to R",
+    "text": "Passing the Result Back to R\nThe mean calculated in Python can be accessed from R using py$mean_life_expectancy.\n\nmean_from_python &lt;- py$mean_life_expectancy\n\nmean_from_python\n\n[1] 73"
+  },
+  {
+    "objectID": "posts/first-weeks/index.html",
+    "href": "posts/first-weeks/index.html",
+    "title": "My first weeks in MDS",
+    "section": "",
+    "text": "My first few weeks in MDS have been exciting but also stressful. There are many lectures, labs, worksheets, and assignments, and each course covers a lot of material in a short time. I am still getting used to the fast pace and learning how to manage my time better.\nSo far, I have learned many new topics and tools. In Python and R, I have worked with programming, data manipulation, and data cleaning. I have also studied probability and statistics while learning tools such as Git, GitHub, the command line, and Quarto.\nOne of my biggest concerns is finding a job after graduation. Since MDS is a short and intensive program, I feel that I need to prepare for the job market while keeping up with my courses. My goal is to become a data analyst, and I hope the skills I learn in MDS will help me achieve that goal.\n\n\n\nA moment from UBC"
   },
   {
     "objectID": "posts/analysis-of-penguins/index.html",
@@ -47,13 +82,6 @@
     "title": "Analysis of Penguins",
     "section": "Summary of Penguin Measurements",
     "text": "Summary of Penguin Measurements\nFinally, I summarize the body mass and flipper length for each penguin species.\n\npenguin_summary = (\n    penguins.groupby(\"species\")\n    .agg(\n        mean_body_mass=(\"body_mass_g\", \"mean\"),\n        mean_flipper_length=(\"flipper_length_mm\", \"mean\"),\n        number_of_penguins=(\"species\", \"count\")\n    )\n    .round(2)\n)\n\npenguin_summary\n\n\n\n\n\n\n\n\nmean_body_mass\nmean_flipper_length\nnumber_of_penguins\n\n\nspecies\n\n\n\n\n\n\n\nAdelie\n3700.66\n189.95\n152\n\n\nChinstrap\n3733.09\n195.82\n68\n\n\nGentoo\n5076.02\n217.19\n124\n\n\n\n\n\n\n\n\nData Source\nThe Palmer Penguins dataset used in this analysis is from the palmerpenguins project by Allison Horst, Alison Hill, and Kristen Gorman. The data were originally collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER.\nThe dataset is available under the CC0 license."
-  },
-  {
-    "objectID": "posts/first-weeks/index.html",
-    "href": "posts/first-weeks/index.html",
-    "title": "My first weeks in MDS",
-    "section": "",
-    "text": "My first few weeks in MDS have been exciting but also stressful. There are many lectures, labs, worksheets, and assignments, and each course covers a lot of material in a short time. I am still getting used to the fast pace and learning how to manage my time better.\nSo far, I have learned many new topics and tools. In Python and R, I have worked with programming, data manipulation, and data cleaning. I have also studied probability and statistics while learning tools such as Git, GitHub, the command line, and Quarto.\nOne of my biggest concerns is finding a job after graduation. Since MDS is a short and intensive program, I feel that I need to prepare for the job market while keeping up with my courses. My goal is to become a data analyst, and I hope the skills I learn in MDS will help me achieve that goal.\n\n\n\nA moment from UBC"
   },
   {
     "objectID": "posts/analysis-of-gapminder/index.html",
